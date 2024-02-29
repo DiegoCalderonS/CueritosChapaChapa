@@ -1,9 +1,10 @@
-﻿using CueritosChapaChapa.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Modelos.ViewModels;
 using System.Diagnostics;
 
-namespace CueritosChapaChapa.Controllers
+namespace CueritosChapaChapa.Areas.Inventario.Controllers
 {
+    [Area("Inventario")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

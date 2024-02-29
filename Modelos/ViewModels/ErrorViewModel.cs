@@ -1,4 +1,4 @@
-namespace CueritosChapaChapa.Models
+namespace Modelos.ViewModels
 {
     public class ErrorViewModel
     {
