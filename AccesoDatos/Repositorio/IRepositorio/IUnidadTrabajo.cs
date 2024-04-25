@@ -9,7 +9,9 @@ namespace AccesoDatos.Repositorio.IRepositorio
     public interface IUnidadTrabajo : IDisposable
     {
         ICueritosRepositorio Cueritos { get; }
-
+        IChurrosRepositorio Churros { get; }
+        IPapasRepositorio Papas { get; }
+        IProductoRepositorio Producto { get; }
         Task Guardar();
     }
 }

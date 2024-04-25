@@ -8,5 +8,9 @@ namespace Utilidades
 {
     public static class CC
     {
+		public const string Exitosa = "Exitosa";
+		public const string Error = "Error";
+
+        public const string ImagenRuta = @"\imagenes\productos\";
     }
 }

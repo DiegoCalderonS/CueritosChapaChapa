@@ -4,6 +4,7 @@ using CueritosChapaChapa.AccesoDatos.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AccesoDatos.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240412032404_Papas y Churros")]
+    partial class PapasyChurros
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -302,56 +305,6 @@ namespace AccesoDatos.Migrations
                     b.ToTable("Papas");
                 });
 
-            modelBuilder.Entity("Modelos.Producto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ChurrosId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Costo")
-                        .HasColumnType("float");
-
-                    b.Property<string>("Descripcion")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<bool>("Estado")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("ImagenUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NumeroSerie")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<int?>("PadreId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PapasId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("Precio")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ChurrosId");
-
-                    b.HasIndex("PadreId");
-
-                    b.HasIndex("PapasId");
-
-                    b.ToTable("Productos");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -401,32 +354,6 @@ namespace AccesoDatos.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Modelos.Producto", b =>
-                {
-                    b.HasOne("Modelos.Churros", "Churros")
-                        .WithMany()
-                        .HasForeignKey("ChurrosId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.HasOne("Modelos.Producto", "Padre")
-                        .WithMany()
-                        .HasForeignKey("PadreId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
-                    b.HasOne("Modelos.Papas", "Papas")
-                        .WithMany()
-                        .HasForeignKey("PapasId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
-                    b.Navigation("Churros");
-
-                    b.Navigation("Padre");
-
-                    b.Navigation("Papas");
                 });
 #pragma warning restore 612, 618
         }

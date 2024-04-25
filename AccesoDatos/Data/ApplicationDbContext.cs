@@ -8,7 +8,9 @@ namespace CueritosChapaChapa.AccesoDatos.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Cueritos> Cueritos { get; set; }
-
+        public DbSet<Churros> Churros { get; set; }
+        public DbSet<Papas> Papas { get; set; }
+        public DbSet<Producto> Productos { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

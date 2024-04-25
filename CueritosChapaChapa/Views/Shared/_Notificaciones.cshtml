@@ -1,0 +1,23 @@
+﻿@using Utilidades
+
+
+@if (TempData[CC.Exitosa] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData[CC.Exitosa]');
+    </script>
+
+}
+
+@if (TempData[CC.Error] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.Error('@TempData[CC.Error]');
+    </script>
+
+}
+

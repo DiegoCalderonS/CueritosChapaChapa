@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+   
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-CueritosChapaChapa-b3623569-b491-49ee-a080-8a38e0d4f82c</UserSecretsId>
   </PropertyGroup>
@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="wwwroot\imagenes\productos\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿using AccesoDatos.Repositorio.IRepositorio;
 using CueritosChapaChapa.AccesoDatos.Data;
+using SistemaInventario.AccesoDatos.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,17 @@ namespace AccesoDatos.Repositorio
     {
         private readonly ApplicationDbContext _db;
         public ICueritosRepositorio Cueritos { get; set; }
+        public IChurrosRepositorio Churros { get; set; }
+        public IPapasRepositorio Papas { get; set; }
 
-       
+        public IProductoRepositorio Producto { get; set; }
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
             Cueritos = new CueritosRepositorio(_db);
+            Churros = new ChurrosRepositorio(_db);
+            Papas = new PapasRepositorio(_db);
+            Producto = new ProductoRepositorio(_db);
         }
 
         public void Dispose()
